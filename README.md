@@ -195,3 +195,23 @@ export default NextAuth({
 - [NextAuth Docs](https://next-auth.js.org/)
 - [List of Providers for OAuth](https://next-auth.js.org/providers/)
 - [Information about the Deployment](https://next-auth.js.org/deployment)
+
+### Afterthought
+
+#### Why should I use NextAuth instead of manually taking care of it?
+
+Using NextAuth and OAuth for authentication in your applications, instead of manually handling usernames, passwords, and their hashes, offers several significant advantages that can enhance security, simplify development, and improve user experience. Here's a concise explanation:
+
+1. Enhanced Security: OAuth providers like Google, Facebook, and Twitter invest heavily in security. By leveraging their authentication systems, you inherit their advanced security measures, such as two-factor authentication and ongoing security updates. This reduces the risk of common vulnerabilities associated with handling passwords directly, such as password theft or brute force attacks.
+
+2. Simplified Development: Implementing a secure authentication system from scratch is complex and time-consuming. It involves not just securely hashing and storing passwords, but also implementing password recovery, account verification emails, and protection against various attacks. NextAuth abstracts away these complexities, allowing you to implement authentication quickly and with fewer lines of code, reducing the potential for security mistakes.
+
+3. Improved User Experience: Users increasingly expect seamless login experiences across websites and applications. Integrating with OAuth providers allows users to sign in with their existing accounts from trusted platforms, eliminating the need to remember another set of credentials. This convenience can lead to higher sign-up and retention rates.
+
+4. Compliance and Best Practices: Managing user credentials requires compliance with data protection regulations like GDPR, which include stipulations on how personally identifiable information (PII) should be stored and processed. Utilizing OAuth and NextAuth can help offload some of these responsibilities to providers that are already compliant, ensuring that you're following best practices without needing to become an expert in regulatory nuances.
+
+5. Scalability: As your application grows, so does the complexity of managing authentication. Relying on NextAuth and OAuth can simplify scaling your user management system, as these solutions are designed to handle a large number of authentication requests efficiently.
+
+6. Focus on Core Features: By offloading the authentication complexity to NextAuth and OAuth providers, your team can focus on developing the core features of your application, improving the overall quality and speed of development.
+
+In summary, while managing passwords and authentication in-house offers control, using NextAuth with OAuth providers delivers robust security, simplifies the development process, enhances user experience, ensures compliance with best practices, aids scalability, and lets you concentrate on your application's unique value proposition.
