@@ -8,12 +8,7 @@ There will be several steps needed to achieve this outcome:
 Steps 1-3 are needed in almost every application using NextAuth and OAuth.
 The other steps are specific for the project of this workshop.
 
-1. Register OAuth-App at GitHub
-2. Basic Setup
-3. Provide Session Context
-4. Create LoginButton component
-
-### Chapter 1 - Register a OAuth-App at GitHub
+### 1. - Register a OAuth-App at GitHub
 
 create GITHUB_ID and GITHUB_SECRET:
 
@@ -34,7 +29,7 @@ When configuring your Vercel deployment using NextAuth, you need to provide addi
 - NEXTAUTH_URL=this should be the URL of your Vercel Deployment
 - NEXTAUTH_SECRET=This is used to encrypt cookies and tokens. It should be a random string of at least 32 characters. On Linux systems, you can generate a suitable string using the command `openssl rand -base64 32`
 
-## Chapter 2 - Basic Setup
+### 2. - Basic Setup
 
 1. NextAuth - Getting started: https://next-auth.js.org/getting-started/example
 2. Installing dependencies:
@@ -158,7 +153,7 @@ export default NextAuth({
 
      </details>
 
-    3. Session-Context bereitstellen, in der `_app.js`:
+    ### 3. Session-Context bereitstellen, in der `_app.js`:
 
     ```js
     import { SessionProvider } from "next-auth/react";
@@ -175,20 +170,25 @@ export default NextAuth({
     }
     ```
 
-  4.  Create LoginButton component using
+  ### 4. Create LoginButton component using
+
       `import { useSession, signIn, signOut } from "next-auth/react"; `
 
-  5.  Implement this as part of the `Layout` component to be visible on every page
-  6.  create dynamic user API Route `pages/api/user/[id].js` and handle the methods: `GET, POST & PATCH`
-  7.  refactor `pages/favorite.js` to fetch the user bases on the `session.data.user.id` and map over `user.favoritePonies`. Consider covering potential exceptions
-  8.  refactor `pages/ponies/[id].js` to fetch the user and the pony; additionally, adapt the toggleFavorite function to handle 3 cases:
-      - `session.status === "unauthenticated"` -> user not allowed to use function
-      - pony is part of the user's favorite ponies -> send a PATCH request to remove entry from array
-      - pony is not yet part of the user's favorite ponies -> send a POST request to add entry to array
-      - if the responses from steps 2 or 3 are ok, mutate
-      - adapt the isFavorite boolean
+### 5. Implement this as part of the `Layout` component to be visible on every page
 
-9. Cross your fingers that everything works
+### 6. create dynamic user API Route `pages/api/user/[id].js` and handle the methods: `GET, POST & PATCH`
+
+### 7. refactor `pages/favorite.js` to fetch the user bases on the `session.data.user.id` and map over `user.favoritePonies`. Consider covering potential exceptions
+
+### 8. refactor `pages/ponies/[id].js` to fetch the user and the pony; additionally, adapt the toggleFavorite function to handle 3 cases:
+
+- `session.status === "unauthenticated"` -> user not allowed to use function
+- pony is part of the user's favorite ponies -> send a PATCH request to remove entry from array
+- pony is not yet part of the user's favorite ponies -> send a POST request to add entry to array
+- if the responses from steps 2 or 3 are ok, mutate
+- adapt the isFavorite boolean
+
+### 9. Cross your fingers that everything works!
 
 ### Link collection
 
