@@ -13,6 +13,11 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "vignette.wikia.nocookie.net" },
+    ],
+  },
 };
 
 module.exports = nextConfig;

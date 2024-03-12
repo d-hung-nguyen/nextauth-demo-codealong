@@ -10,5 +10,13 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 `;
