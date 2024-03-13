@@ -28,13 +28,13 @@ export default function DetailCard({ id, pony, toggleFavorite, isFavorite }) {
       </Container>
       <h3>Occupation: </h3>
       <ul>
-        {pony.occupation.split("\n").map((entry, index) => {
+        {pony.occupation?.split("\n").map((entry, index) => {
           return <li key={index}>{entry}</li>;
         })}
       </ul>
       <h3>Residence</h3>
       <ul>
-        {pony.residence.split("\n").map((entry, index) => {
+        {pony.residence?.split("\n").map((entry, index) => {
           return <li key={index}>{entry}</li>;
         })}
       </ul>
